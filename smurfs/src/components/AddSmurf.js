@@ -21,7 +21,7 @@ class AddSmurf extends Component {
 
   submitHandler = e => {
     e.preventDefault();
-    this.props.addSmurf(...this.state)
+    this.props.addSmurf(this.state)
     this.setState({
       name: '',
       age: '',
@@ -39,7 +39,7 @@ class AddSmurf extends Component {
           placeholder='Name'
           onChange={this.handleChange} />
         <input
-          type='number'
+          type='text'
           name='age'
           value={this.state.age}
           placeholder='Age'

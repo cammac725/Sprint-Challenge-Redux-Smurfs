@@ -48,6 +48,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         error: '',
         smurfs: action.payload,
+        loading: false,
         addingSmurf: true
       }
 
