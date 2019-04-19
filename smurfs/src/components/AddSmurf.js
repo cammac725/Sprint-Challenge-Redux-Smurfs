@@ -43,7 +43,7 @@ class AddSmurf extends Component {
           name='age'
           value={this.state.age}
           placeholder='Age'
-          nChange={this.handleChange} />
+          onChange={this.handleChange} />
         <input
           type='text'
           name='height'
@@ -58,7 +58,9 @@ class AddSmurf extends Component {
 }
 
 const mapStateToProps = state => {
-  return {}
+  return {
+    addingSmurf: state.addingSmurf
+  }
 }
 
 export default connect(mapStateToProps, { addSmurf: addSmurf })(AddSmurf)
