@@ -2,6 +2,8 @@ import React from 'react';
 import { getSmurf } from '../actions';
 import { connect } from 'react-redux';
 
+import Smurf from './Smurf';
+
 class SmurfList extends React.Component {
 
   componentDidMount() {
@@ -13,11 +15,7 @@ class SmurfList extends React.Component {
       <div>
         {this.props.loading ? <h2>Loading...</h2> : null}
         {this.props.smurfs.map(smurf =>
-          <div key={smurf.id}>
-            <h3>Smurf's name: {smurf.name}</h3>
-            <p>Smurf's age: {smurf.age}</p>
-            <p>Smurf's height: {smurf.height}</p>
-          </div>
+          <Smurf smurf={smurf} key={smurf.id + smurf.name} />
         )}
       </div>
     )

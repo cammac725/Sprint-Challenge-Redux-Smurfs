@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <div>
-      <NavLink to='/'>Home</NavLink>
+    <div className='header'>
+      <NavLink className='link' to='/'>Home</NavLink>
       <NavLink to='/add'>Add a Smurf</NavLink>
     </div>
   )

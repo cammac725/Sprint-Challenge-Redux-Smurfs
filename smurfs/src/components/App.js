@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
 
 import AddSmurf from './AddSmurf';
+import UpdateSmurf from './UpdateSmurf';
 import SmurfList from './SmurfList';
 import Header from './Header';
 import './App.css';
@@ -22,6 +23,7 @@ class App extends Component {
 
           <Route exact path='/' component={SmurfList} />
           <Route path='/add' component={AddSmurf} />
+          <Route path='/update/:id' component={UpdateSmurf} />
 
         </div>
       </div>
