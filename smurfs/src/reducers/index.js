@@ -2,19 +2,17 @@
   Be sure to import in all of the action types from `../actions`
 */
 import {
-  FETCH_SMURF_START,
+  LOADING,
   FETCH_SMURF_SUCCESS,
-  FETCH_SMURF_FAIL,
-  ADD_SMURF_START,
-  ADD_SMURF_SUCCESS,
-  ADD_SMURF_FAIL
+  ERROR,
+  ADD_SMURF_SUCCESS
 } from '../actions';
 
 
 const initialState = {
   smurfs: [],
-  fetchingSmurf: false,
   addingSmurf: false,
+  loading: false,
   error: ''
 }
 /*
@@ -30,11 +28,11 @@ const initialState = {
 */
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_SMURF_START:
+    case LOADING:
       return {
         ...state,
         error: '',
-        fetchingSmurf: true
+        loading: true
       }
 
     case FETCH_SMURF_SUCCESS:
@@ -42,21 +40,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         error: '',
         smurfs: action.payload,
-        fetchingSmurf: false
-      }
-
-    case FETCH_SMURF_FAIL:
-      return {
-        ...state,
-        error: action.payload,
-        fetchingSmurf: false
-      }
-
-    case ADD_SMURF_START:
-      return {
-        ...state,
-        error: '',
-        addingSmurf: true
+        loading: false
       }
 
     case ADD_SMURF_SUCCESS:
@@ -64,14 +48,14 @@ const reducer = (state = initialState, action) => {
         ...state,
         error: '',
         smurfs: action.payload,
-        addingSmurf: false
+        addingSmurf: true
       }
 
-    case ADD_SMURF_FAIL:
+    case ERROR:
       return {
         ...state,
         error: action.payload,
-        addingSmurf: false
+        loading: false
       }
 
     default: return state

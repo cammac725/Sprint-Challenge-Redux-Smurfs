@@ -58,9 +58,7 @@ class AddSmurf extends Component {
 }
 
 const mapStateToProps = state => {
-  return {
-    addingSmurf: state.addingSmurf
-  }
+  return {}
 }
 
 export default connect(mapStateToProps, { addSmurf: addSmurf })(AddSmurf)
