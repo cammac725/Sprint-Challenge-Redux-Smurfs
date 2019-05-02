@@ -1,7 +1,7 @@
 import React from 'react';
-import { getSmurf } from '../actions';
 import { connect } from 'react-redux';
 
+import { getSmurf } from '../actions';
 import Smurf from './Smurf';
 
 class SmurfList extends React.Component {
@@ -26,7 +26,7 @@ const mapStateToProps = state => {
   return {
     smurfs: state.smurfs,
     error: state.error,
-    loading: state.loading,
+    loading: state.loading
   }
 }
 
